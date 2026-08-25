@@ -1,0 +1,269 @@
+:root {
+  --bg: #0f1115;
+  --surface: #171a21;
+  --surface-hover: #1e222b;
+  --border: #2a2f3a;
+  --text: #e6e8eb;
+  --text-dim: #9aa1ac;
+  --accent: #4f8cff;
+  --up: #2fbf71;
+  --degraded: #e6a02a;
+  --down: #e5484d;
+  --unknown: #565d6b;
+
+  color-scheme: dark;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+#root {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+}
+
+h1, h2, h3, h4 {
+  margin: 0 0 4px;
+}
+
+.dashboard-header {
+  margin-bottom: 24px;
+}
+
+.subtitle {
+  color: var(--text-dim);
+  margin: 0;
+}
+
+.add-target-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.add-target-form input {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  flex: 1;
+  min-width: 180px;
+}
+
+.add-target-form button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.add-target-form button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.form-error {
+  color: var(--down);
+  font-size: 13px;
+  align-self: center;
+}
+
+.error-text {
+  color: var(--down);
+}
+
+.empty-text {
+  color: var(--text-dim);
+}
+
+.target-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.target-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.target-card:hover {
+  background: var(--surface-hover);
+}
+
+.target-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.target-card-header h3 {
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.target-url {
+  color: var(--text-dim);
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.target-stats {
+  display: flex;
+  gap: 24px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.stat-value {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.badge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.badge-up {
+  background: rgba(47, 191, 113, 0.15);
+  color: var(--up);
+}
+
+.badge-degraded {
+  background: rgba(230, 160, 42, 0.15);
+  color: var(--degraded);
+}
+
+.badge-down {
+  background: rgba(229, 72, 77, 0.15);
+  color: var(--down);
+}
+
+.badge-unknown {
+  background: rgba(86, 93, 107, 0.2);
+  color: var(--text-dim);
+}
+
+.delete-btn {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  border-color: var(--down);
+  color: var(--down);
+}
+
+.delete-btn.confirm {
+  background: var(--down);
+  border-color: var(--down);
+  color: white;
+}
+
+.back-btn {
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+.target-detail h2 {
+  margin-top: 4px;
+}
+
+.detail-summary {
+  display: flex;
+  gap: 32px;
+  margin: 20px 0;
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.chart-wrapper {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 8px 8px;
+  margin-bottom: 24px;
+}
+
+.timeline {
+  display: flex;
+  gap: 2px;
+  height: 32px;
+}
+
+.timeline-block {
+  flex: 1;
+  border-radius: 2px;
+}
+
+.timeline-up {
+  background: var(--up);
+}
+
+.timeline-degraded {
+  background: var(--degraded);
+}
+
+.timeline-down {
+  background: var(--down);
+}
+
+.timeline-unknown {
+  background: var(--unknown);
+  opacity: 0.4;
+}
